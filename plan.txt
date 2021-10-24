@@ -14,6 +14,8 @@ pqr
 ((p|q)=~(p|q))&(p|(~(~q)))
 ((p|q)=(p|q))&(p|(~(~q)))
 ((p&q)=(~r))
+()
+)(
 
 
 Nu se stie cand folosesc vechituri:

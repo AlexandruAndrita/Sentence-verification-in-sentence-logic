@@ -27,7 +27,7 @@ void instructiuni()
 void citire()
 {
     cout<<"Introduceti expresia dorita:\n\n";
-    fin.get(s,256);
+    cin.get(s,256);
     cout<<"\n\n";
 }
 
@@ -83,6 +83,7 @@ void validareInput()
     {
         cout<<"Expresia introdusa nu este formula propozitionala\n";
         cout<<"Expresia nu contine propozitii atomice\n";
+        exit(0);
     }
 }
 
