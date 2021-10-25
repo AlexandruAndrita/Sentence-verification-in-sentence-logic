@@ -5,7 +5,7 @@ using namespace std;
 
 ifstream fin("citire.in");
 
-char s[26000];
+char s[300];
 char caractere[] = {"qwertyuiopasdfghjklzxcvbnm&~|-=() "};
 char conectori[]= {"&~|-=()"};
 char propatomice[]= {"qwertyuiopasdfghjklzxcvbnm"};

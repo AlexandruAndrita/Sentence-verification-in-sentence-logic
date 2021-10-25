@@ -1,12 +1,13 @@
 Exemple pentru test:
-(p&((~q)&(~(~(q=(~r))))))
-(~(b(~q))&r)
-((p=(q&(s=t))))
-(((p-q)|s)=t)
-pqr
-(p=)
-((p|q)=~(p|q))&(p|(~(~q)))
-((p|q)=(p|q))&(p|(~(~q)))
-((p&q)=(~r))
-()
-)(
+
+(p&((~q)&(~(~(q=(~r)))))) - este formula propozitionala
+(~(b(~q))&r) - nu este formula propozitionala
+((p=(q&(s=t)))) - este formula propozitionala
+(((p-q)|s)=t) - este formula propozitionala
+pqr - nu este formula propozitionala
+(p=) - nu este formula propozitionala
+((p|q)=~(p|q))&(p|(~(~q))) - nu este formula propozitionala
+((p|q)=(p|q))&(p|(~(~q))) - este formula propozitionala
+((p&q)=(~r)) - este formula propozitionala
+() - nu este formula propozitionala
+)( - nu este formula propozitionala
