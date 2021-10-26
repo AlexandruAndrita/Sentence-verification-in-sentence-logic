@@ -115,23 +115,24 @@ void verificareFormulaPropozitionala()
     ///daca s[i] este conector, poate fi urmat doar de paranteza deschisa sau de propozitie atomica
     ///daca s[i] este propozitie atomica poate fi urmat doar de un conector sau de o paranteza inchisa
 
-    int n=strlen(s),coborare=0,urcare=0;
+    int n=strlen(s);
+    //int coborare=0,urcare=0;
     for(int i=0; i<n; i++)
     {
         if(s[i]=='(')
         {
-            coborare++;
+            //coborare++;
             if(s[i+1]==')' && strchr("&|-=",s[i+1])==0 && strchr(propatomice,s[i+1])==0)
             {
                 cout<<"Expresia nu este formula propozitionala\n";
                 exit(0);
             }
         }
-        if(s[i]==')')
-            urcare++;
+        //if(s[i]==')')
+            //urcare++;
         if(strchr("&|-=",s[i]))
         {
-            coborare++;
+            //coborare++;
             if(strchr(propatomice,s[i+1])==0 && s[i+1]!='(')
             {
                 cout<<"Expresia nu este formula propozitionala\n";
@@ -140,7 +141,7 @@ void verificareFormulaPropozitionala()
         }
         if(s[i]=='~')
         {
-            coborare++;
+            //coborare++;
             if(strchr(propatomice,s[i+1])==0 && s[i+1]!='(')
             {
                 cout<<"Expresia nu este formula propozitionala\n";
@@ -149,7 +150,7 @@ void verificareFormulaPropozitionala()
         }
         if(strchr(propatomice,s[i]))
         {
-            urcare++;
+            //urcare++;
             if(strchr("&|-=",s[i+1])==0 && s[i+1]!=')')
             {
                 cout<<"Expresia nu este formula propozitionala\n";
