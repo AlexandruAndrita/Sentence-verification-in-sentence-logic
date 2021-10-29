@@ -2,7 +2,7 @@ Exemple pentru test:
 
 (P&((~Q)&(~(~(Q=(~R)))))) - este formula propozitionala
 (~(B(~Q))&R) - nu este formula propozitionala
-((P=(Q&(S=T)))) - este formula propozitionala
+((P=(Q&(S=T)))) - nu este formula propozitionala
 (((P-Q)|S)=T) - este formula propozitionala
 PQR - nu este formula propozitionala
 (P=) - nu este formula propozitionala

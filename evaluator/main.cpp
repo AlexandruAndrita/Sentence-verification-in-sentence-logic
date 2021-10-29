@@ -7,8 +7,7 @@ ifstream fin("citire.in");
 
 char s[256];
 char caractere[] = {"QWERTYUIOPASDFGHJKLZXCVBNM&~|-=() "};
-//char conectori[]= {"&~|-=()"};
-char conectoriFaraParanteze[]={"&~|-="};
+char conectori[]={"&~|-="};
 char propatomice[]= {"QWERTYUIOPASDFGHJKLZXCVBNM"};
 
 void instructiuniUtilizare()
@@ -22,7 +21,8 @@ void instructiuniUtilizare()
     cout<<"-pentru PARANTEZA DESCHISA se va citi '(';\n";
     cout<<"-pentru PARANTEZA INCHISA se va citi ')';\n";
     cout<<"-pentru PROPOZITIILE ATOMICE se vor folosi litere simple (mari sau mici), NU litere cu indecsi, NU litere dublate.\n";
-    cout<<"\n\n\n";
+    cout<<"-NU va fi introdus niciun spatiu intre elementele expresiei (fie ca este vorba despre conectori sau propozitii atomice\n";
+    cout<<"\n\n";
 }
 
 void citire()
@@ -43,7 +43,7 @@ void validareInput()
             cout<<"Au fost introduse caractere mici "<<s[i]<<" ;acestea nu sunt considerate propozitii atomice";
             exit(0);
         }
-        if(strchr(conectoriFaraParanteze,s[i]))
+        if(strchr(conectori,s[i]))
             operatori++;
         if(strchr(propatomice,s[i]))
             propozitii++;
@@ -117,7 +117,7 @@ void validareInput()
         {
             if(s[i+1]==')' && strchr("&|-=",s[i+1])==0 && strchr(propatomice,s[i+1])==0)
             {
-                cout<<"Expresia nu este formula propozitionala\n";
+                cout<<"Expresia introdusa nu este formula propozitionala\n";
                 exit(0);
             }
         }
@@ -125,7 +125,7 @@ void validareInput()
         {
             if(strchr(propatomice,s[i+1])==0 && s[i+1]!='(')
             {
-                cout<<"Expresia nu este formula propozitionala\n";
+                cout<<"Expresia introdusa nu este formula propozitionala\n";
                 exit(0);
             }
         }
@@ -133,7 +133,7 @@ void validareInput()
         {
             if(strchr(propatomice,s[i+1])==0 && s[i+1]!='(')
             {
-                cout<<"Expresia nu este formula propozitionala\n";
+                cout<<"Expresia introdusa nu este formula propozitionala\n";
                 exit(0);
             }
         }
@@ -141,18 +141,23 @@ void validareInput()
         {
             if(strchr("&|-=",s[i+1])==0 && s[i+1]!=')')
             {
-                cout<<"Expresia nu este formula propozitionala\n";
+                cout<<"Expresia introdusa nu este formula propozitionala\n";
                 exit(0);
             }
         }
     }
-    cout<<"Expresia este formula propozitionala\n";
+    cout<<"Expresia introdusa este formula propozitionala\n";
 }
 
-int main()
+void apeluriFunctii()
 {
     instructiuniUtilizare();
     citire();
     validareInput();
+}
+
+int main()
+{
+    apeluriFunctii();
     return 0;
 }
