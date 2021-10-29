@@ -6,9 +6,10 @@ using namespace std;
 ifstream fin("citire.in");
 
 char s[256];
-char caractere[] = {"qwertyuiopasdfghjklzxcvbnm&~|-=() "};
+char caractere[] = {"QWERTYUIOPASDFGHJKLZXCVBNM&~|-=() "};
 char conectori[]= {"&~|-=()"};
-char propatomice[]= {"qwertyuiopasdfghjklzxcvbnm"};
+char conectoriFaraParanteze[]={"&~|-="};
+char propatomice[]= {"QWERTYUIOPASDFGHJKLZXCVBNM"};
 
 void instructiuni()
 {
@@ -36,12 +37,16 @@ void validareInput()
     int n=strlen(s),deschise=0,inchise=0,operatori=0,propozitii=0;
     for(int i=0; i<n; i++)
     {
-        if((s[i]>='A' && s[i]<='Z') || (s[i]>='a' && s[i]<='z'))
-            propozitii++;
-        if(strchr(conectori,s[i]))
+        if(s[i]>='a' && s[i]<='z')
+        {
+            cout<<"Expresia introdusa nu este formula propozitionala\n";
+            cout<<"Au fost introduse caractere mici "<<s[i]<<" ;acestea nu sunt considerate propozitii atomice";
+            exit(0);
+        }
+        if(strchr(conectoriFaraParanteze,s[i]))
             operatori++;
-        if(s[i]>='A' && s[i]<='Z')
-            s[i]=s[i]-'a'+'A';
+        if(strchr(propatomice,s[i]))
+            propozitii++;
         if(s[i]=='(')
         {
             deschise++;
@@ -72,6 +77,15 @@ void validareInput()
         cout<<"Numarul de paranteze inchise si numarul de paranteze deschise nu coincide\n";
         exit(0);
     }
+    //else
+    //{
+        //if(deschise!=operatori && inchise==deschise)
+        //{
+            //cout<<"Expresia introdusa nu este formula propozitionala\n";
+            //cout<<"Expresia nu are destule paranteze astfel incat sa indeplineasca forma strica\n";
+            //exit(0);
+        //}
+    //}
     ///daca expresia are propoziitii si nu are operatori sau invers, nu este valida
     if(propozitii!=0 && operatori==0)
     {
@@ -85,54 +99,31 @@ void validareInput()
         cout<<"Expresia nu contine propozitii atomice\n";
         exit(0);
     }
-}
-
-void stergereSpatii(char s[],int &n)
-{
-    int nrs=0;
-    for(int i=0; i<n; i++)
+    if(inchise==deschise && propozitii==1 && operatori==0)
     {
-        if(s[i]==' ')
-            nrs++;
-        else
-            s[i-nrs]=s[i];
+        cout<<"Expresia introdusa nu este formula propozitionala\n";
+        cout<<"Expresia este de forma: ( P ), iar aceasta forma nu este considerata formula bine formata.\n";
+        exit(0);
     }
-    n=n-nrs;
-    s[n]='\0';
-}
 
-void afisare(int start,int stop)
-{
-    for(int i=start; i<=stop; i++)
-        cout<<s[i];
-}
-
-void verificareFormulaPropozitionala()
-{
     ///daca s[i] este paranteza deschisa, cobor in arbore, altfel la paranteza inchisa urc;
     ///daca s[i] este propozitie atomica urc in arbore;
     ///daca s[i] este conector cobor in arbore;
     ///daca s[i] este conector, poate fi urmat doar de paranteza deschisa sau de propozitie atomica
     ///daca s[i] este propozitie atomica poate fi urmat doar de un conector sau de o paranteza inchisa
 
-    int n=strlen(s);
-    //int coborare=0,urcare=0;
     for(int i=0; i<n; i++)
     {
         if(s[i]=='(')
         {
-            //coborare++;
             if(s[i+1]==')' && strchr("&|-=",s[i+1])==0 && strchr(propatomice,s[i+1])==0)
             {
                 cout<<"Expresia nu este formula propozitionala\n";
                 exit(0);
             }
         }
-        //if(s[i]==')')
-            //urcare++;
         if(strchr("&|-=",s[i]))
         {
-            //coborare++;
             if(strchr(propatomice,s[i+1])==0 && s[i+1]!='(')
             {
                 cout<<"Expresia nu este formula propozitionala\n";
@@ -141,7 +132,6 @@ void verificareFormulaPropozitionala()
         }
         if(s[i]=='~')
         {
-            //coborare++;
             if(strchr(propatomice,s[i+1])==0 && s[i+1]!='(')
             {
                 cout<<"Expresia nu este formula propozitionala\n";
@@ -150,7 +140,6 @@ void verificareFormulaPropozitionala()
         }
         if(strchr(propatomice,s[i]))
         {
-            //urcare++;
             if(strchr("&|-=",s[i+1])==0 && s[i+1]!=')')
             {
                 cout<<"Expresia nu este formula propozitionala\n";
@@ -166,6 +155,5 @@ int main()
     instructiuni();
     citire();
     validareInput();
-    verificareFormulaPropozitionala();
     return 0;
 }

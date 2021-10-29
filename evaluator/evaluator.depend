@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1635244098 source:d:\info - facultate\materii\logica computationala\evaluatorpropozitie\evaluator\main.cpp
+1635528204 source:d:\info - facultate\materii\logica computationala\evaluatorpropozitie\evaluator\main.cpp
 	<iostream>
 	<fstream>
 	<cstring>
