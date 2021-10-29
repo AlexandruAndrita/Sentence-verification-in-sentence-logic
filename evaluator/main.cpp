@@ -11,7 +11,7 @@ char conectori[]= {"&~|-=()"};
 char conectoriFaraParanteze[]={"&~|-="};
 char propatomice[]= {"QWERTYUIOPASDFGHJKLZXCVBNM"};
 
-void instructiuni()
+void instructiuniUtilizare()
 {
     cout<<"Cateva reguli de utilizare:\n";
     cout<<"-pentru AND se va citi '&';\n";
@@ -152,7 +152,7 @@ void validareInput()
 
 int main()
 {
-    instructiuni();
+    instructiuniUtilizare();
     citire();
     validareInput();
     return 0;
