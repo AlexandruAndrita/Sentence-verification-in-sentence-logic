@@ -7,7 +7,7 @@ ifstream fin("citire.in");
 
 char s[256];
 char caractere[] = {"QWERTYUIOPASDFGHJKLZXCVBNM&~|-=() "};
-char conectori[]= {"&~|-=()"};
+//char conectori[]= {"&~|-=()"};
 char conectoriFaraParanteze[]={"&~|-="};
 char propatomice[]= {"QWERTYUIOPASDFGHJKLZXCVBNM"};
 
@@ -77,15 +77,14 @@ void validareInput()
         cout<<"Numarul de paranteze inchise si numarul de paranteze deschise nu coincide\n";
         exit(0);
     }
-    //else
-    //{
-        //if(deschise!=operatori && inchise==deschise)
-        //{
-            //cout<<"Expresia introdusa nu este formula propozitionala\n";
-            //cout<<"Expresia nu are destule paranteze astfel incat sa indeplineasca forma strica\n";
-            //exit(0);
-        //}
-    //}
+    else
+    {
+        if(deschise!=operatori)
+        {
+            cout<<"Expresia introdusa nu este formula propozitionala\n";
+            exit(0);
+        }
+    }
     ///daca expresia are propoziitii si nu are operatori sau invers, nu este valida
     if(propozitii!=0 && operatori==0)
     {
