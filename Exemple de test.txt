@@ -6,7 +6,7 @@ Exemple pentru test:
 (((P-Q)|S)=T) - este formula propozitionala
 PQR - nu este formula propozitionala
 (P=) - nu este formula propozitionala
-((P|Q)=~(P|Q))&(P|(~(~Q))) - nu este formula propozitionala
+((P|Q)=~(P|Q))&(P|(~(~Q))) - nu este formula propozitionala 
 ((P|Q)=(P|Q))&(P|(~(~Q))) - nu este formula propozitionala
 ((P&Q)=(~Q)) - este formula propozitionala
 ((~A)=(B|C)) - este formula propozitionala
