@@ -9,7 +9,6 @@ def instructiuni():
     print("-pentru PARANTEZA INCHISA se va citi ')';")
     print("-pentru PROPOZITIILE ATOMICE se vor folosi litere simple (mari sau mici), NU litere cu indecsi, NU litere dublate.")
     print("-NU va fi introdus niciun spatiu intre elementele expresiei (fie ca este vorba despre conectori sau propozitii atomice\n\n")
-    #ultimul print va fi programat
 
 def verificaConector(caracter,conectori):
     lungime=len(conectori)
@@ -92,11 +91,17 @@ def validareExpresiaIntrodusa(text,caractere,conectori,propatomice):
                 exit(0)
     print("Expresia este formula propozitionala")
 
-
+def eliminaSpatiiIntreCaractere(text,caractere,conectori,propatomice):
+    separare=text.split(" ")
+    conectorElemente=""
+    rezultat = conectorElemente.join(separare)
+    validareExpresiaIntrodusa(rezultat, caractere, conectori, propatomice)
 
 instructiuni()
 text=str(input())
 caractere="QWERTYUIOPASDFGHJKLZXCVBNM&~|-=() "
 conectori="&~|-="
 propatomice="QWERTYUIOPASDFGHJKLZXCVBNM"
-validareExpresiaIntrodusa(text,caractere,conectori,propatomice)
+eliminaSpatiiIntreCaractere(text,caractere,conectori,propatomice)
+
+#trebuie adaugat liste (liste in liste) pentru listarea elementelor listei

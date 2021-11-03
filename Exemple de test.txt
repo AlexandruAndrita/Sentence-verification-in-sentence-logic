@@ -1,5 +1,7 @@
 Exemple pentru test:
 
+Testare fara spatii de eliminat:
+
 (P&((~Q)&(~(~(Q=(~R)))))) - este formula propozitionala
 (~(B(~Q))&R) - nu este formula propozitionala
 ((P=(Q&(S=T)))) - nu este formula propozitionala
@@ -16,3 +18,9 @@ A|B - nu este formula propozitionala
 (A|B) - este formula propozitionala
 () - nu este formula propozitionala
 )( - nu este formula propozitionala
+
+Testare cu spatii de eliminat:
+
+(P   &(    (              ~Q)&(~       (~(Q=    (     ~R) )))            )) - este formula propozitionala
+((A    &B   )&             (B  &C)   &(A                                                                   &C)) - nu este formula propozitionala
+P |Q &        F&  (~Q) - nu este formula propozitionala
