@@ -7,8 +7,7 @@ def instructiuni():
     print("-pentru ECVHIVALENT se va citi '=';")
     print("-pentru PARANTEZA DESCHISA se va citi '(';")
     print("-pentru PARANTEZA INCHISA se va citi ')';")
-    print("-pentru PROPOZITIILE ATOMICE se vor folosi litere simple (mari sau mici), NU litere cu indecsi, NU litere dublate.")
-    print("-NU va fi introdus niciun spatiu intre elementele expresiei (fie ca este vorba despre conectori sau propozitii atomice\n\n")
+    print("-pentru PROPOZITIILE ATOMICE se vor folosi litere simple (mari sau mici), NU litere cu indecsi, NU litere dublate.\n\n")
 
 def verificaConector(caracter,conectori):
     lungime=len(conectori)
