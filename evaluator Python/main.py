@@ -102,5 +102,3 @@ caractere="QWERTYUIOPASDFGHJKLZXCVBNM&~|-=() "
 conectori="&~|-="
 propatomice="QWERTYUIOPASDFGHJKLZXCVBNM"
 eliminaSpatiiIntreCaractere(text,caractere,conectori,propatomice)
-
-#trebuie adaugat liste (liste in liste) pentru listarea elementelor listei
